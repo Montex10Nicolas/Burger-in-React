@@ -4,7 +4,7 @@ import { Visualizzazione } from "./component/Visualizzazione";
 
 function App() {
 	const [panino, setPanino] = useState({
-		burgher: [],
+		burger: [],
 		cheese: [],
 		ketchup: [],
 		mayo: [],

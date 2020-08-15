@@ -19,7 +19,7 @@ export const Ingredienti = (props) => {
 		}));
 	};
 
-	const nomi = ["burgher", "cheese", "ketchup", "mayo"];
+	const nomi = ["burger", "cheese", "ketchup", "mayo"];
 	return (
 		<div>
 			{nomi.map((el) => {
