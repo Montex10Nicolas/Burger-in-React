@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Ingredienti } from "./component/AggiungiIngredienti";
+import { Visualizzazione } from "./component/Visualizzazione";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [panino, setPanino] = useState({
+		burgher: [],
+		cheese: [],
+		ketchup: [],
+		mayo: [],
+	});
+
+	return (
+		<div>
+			<Visualizzazione panino={panino} />
+			<Ingredienti panino={panino} setPanino={setPanino} />
+		</div>
+	);
 }
 
 export default App;

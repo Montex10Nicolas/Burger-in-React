@@ -1,0 +1,35 @@
+.container > * {
+	display: grid;
+	place-items: center;
+	width: 500px;
+	height: 20px;
+	margin: 10px;
+}
+
+.top {
+	height: 60px;
+	background-color: red;
+	border-radius: 120px 120px 0px 0px;
+}
+
+.bottom {
+	height: 60px;
+	border-radius: 0px 0px 120px 120px;
+	background-color: blue;
+}
+
+.cheese {
+	background-color: rgb(199, 199, 59);
+}
+
+.burgher {
+	background-color: brown;
+}
+
+.ketchup {
+	background-color: red;
+}
+
+.mayo {
+	background-color: rgb(128, 255, 0);
+}
