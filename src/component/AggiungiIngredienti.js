@@ -1,38 +1,20 @@
 import React from "react";
 
-export const Ingredienti = (props) => {
-	const aggiungi = (e) => {
-		const { name } = e.target;
-
-		props.setPanino((panino) => ({
-			...panino,
-			[name]: [...panino[name], "uwu"],
-		}));
-	};
-
-	const rimuovi = (e) => {
-		const { name } = e.target;
-
-		props.setPanino((panino) => ({
-			...panino,
-			[name]: panino[name].length > 1 ? panino[name].pop() : [],
-		}));
-	};
-
+export const Ingredienti = ({panino, aggiungi, rimuovi}) => {
 	const nomi = ["burger", "cheese", "ketchup", "mayo"];
 	return (
 		<div>
-			{nomi.map((el) => {
+			{nomi.map((el, idx) => {
 				return (
-					<div>
-						<button name={el} onClick={aggiungi}>
+					<div key={`Componente${idx}`}>
+						<button name={el} onClick={() => aggiungi(el)}>
 							Add
 						</button>{" "}
 						<button
 							name={el}
-							onClick={rimuovi}
+							onClick={() => rimuovi(el)}
 							disabled={
-								props.panino[el].length > 0 ? false : true
+								panino[el].length > 0 ? false : true
 							}
 						>
 							Remove

@@ -10,10 +10,26 @@ function App() {
 		mayo: [],
 	});
 
+	const rimuovi = (name) => {
+		let coso = panino[name];
+		coso.pop();
+		setPanino((panino) => ({
+			...panino,
+			[name]: coso,
+		}));
+	}
+
+	const aggiungi = (name) => {
+		setPanino((panino) => ({
+			...panino,
+			[name]: [...panino[name], "uwu"],
+		}));
+	}
+
 	return (
 		<div>
 			<Visualizzazione panino={panino} />
-			<Ingredienti panino={panino} setPanino={setPanino} />
+			<Ingredienti panino={panino} aggiungi={aggiungi} rimuovi={rimuovi} />
 		</div>
 	);
 }
